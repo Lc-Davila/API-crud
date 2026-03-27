@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from "react";
 import { View, Text, FlatList, Button } from "react-native";
+import { useFocusEffect } from '@react-navigation/native';
 
 import styles from "../styles/styles";
 
-import { getPeople, deletePerson } from "../servers/peopleCrud";
+import { getPeople, deletePerson } from "../peopleCrud";
 
 import CardPersonal from "../components/CardPersonal";
 
@@ -18,12 +19,13 @@ export default function HomeScreen({ navigation }) {
     setPeople(data);
   }
 
-  useEffect(()=>{
-    loadPeople();
-  }, []);
-}
+  useFocusEffect(
+    React.useCallback(() => {
+      loadPeople();
+    }, [])
+  );
 
-return(
+  return(
     <View style={styles.container}>
   
       <Text style={styles.title}>Pessoas</Text>
@@ -47,4 +49,5 @@ return(
   
     </View>
   );
+}
   

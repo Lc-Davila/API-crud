@@ -3,7 +3,7 @@ import { View, TextInput, Button } from "react-native";
 
 import styles from "../styles/styles";
 
-import { createPerson, updatePerson } from "../servers/peopleCrud";
+import { createPerson, updatePerson } from "../peopleCrud";
 
 export default function AddEditScreen({ route, navigation }) {
 
@@ -29,9 +29,8 @@ export default function AddEditScreen({ route, navigation }) {
 
     navigation.goBack();
   }
-}
 
-return(
+  return(
 
     <View style={styles.container}>
 
@@ -65,3 +64,4 @@ return(
 
     </View>
   );
+}
