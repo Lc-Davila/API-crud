@@ -15,6 +15,20 @@ export default function CardPersonal({ item, navigation, refresh }) {
         <Text style={styles.email}>
           {item.email}
         </Text>
+
+        <View>
+  <Text style={styles.name}>
+    {item.firstName} {item.lastName}
+  </Text>
+
+  <Text style={styles.email}>
+    {item.email}
+  </Text>
+
+  <Text style={styles.phone}>
+    {item.phone}
+  </Text>
+</View>
       </View>
 
       <View>

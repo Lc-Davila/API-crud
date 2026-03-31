@@ -10,20 +10,20 @@ export async function getPeople() {
 }
 
 
-export async function createPerson(person) {
+export async function createPeople(people) {
 
     const response = await fetch(`${API_URL}/people`, {
         method: "POST", 
         headers: {
             "Content-Type": "application/json"
         },
-        body: JSON.stringify(person)
+        body: JSON.stringify(people)
     });
 
     return response.json();
 }
 
-export async function updatePerson(id, person) {
+export async function updatePeople(id, people) {
 
     const response = await fetch(`${API_URL}/people/${id}`, {
         method: "PUT",
@@ -37,7 +37,7 @@ export async function updatePerson(id, person) {
 }
 
 
-export async function deletePerson(id) {
+export async function deletePeople(id) {
 
     await fetch(`${API_URL}/people/${id}`, {
         method: "DELETE"

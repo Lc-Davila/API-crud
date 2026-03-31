@@ -1,1 +1,1 @@
-export const API_URL = "https://loose-bars-create.loca.lt";
+export const API_URL = "https://localhost:3000";
