@@ -1,7 +1,7 @@
 import React from "react";
 import { View, Text, Button } from "react-native";
 import styles from "../styles/styles";
-import { deletePerson } from "../peopleCrud";
+import { deletePeople } from "../peopleCrud";
 
 export default function CardPersonal({ item, navigation, refresh }) {
   return(
@@ -34,13 +34,13 @@ export default function CardPersonal({ item, navigation, refresh }) {
       <View>
         <Button
           title="Editar"
-          onPress={() => navigation.navigate("AddEdit", { person: item })}
+          onPress={() => navigation.navigate("AddEdit", { people: item })}
         />
 
         <Button
           title="Deletar"
           onPress={async () => {
-            await deletePerson(item.id);
+            await deletePeople(item.id);
             refresh();
           }}
         />

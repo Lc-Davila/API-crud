@@ -3,28 +3,28 @@ import { View, TextInput, Button } from "react-native";
 
 import styles from "../styles/styles";
 
-import { createPerson, updatePerson } from "../peopleCrud";
+import { createPeople, updatePeople } from "../peopleCrud";
 
 export default function AddEditScreen({ route, navigation }) {
 
-  const person = route.params?.person;
+  const people = route.params?.people;
 
-  const [firstName, setFirstName] = useState(person?.firstName || "");
-  const [lastName, setLastName] = useState(person?.lastName || "");
-  const [email, setEmail] = useState(person?.email || "");
-  const [phone, setPhone] = useState(person?.phone || "");
+  const [firstName, setFirstName] = useState(people?.firstName || "");
+  const [lastName, setLastName] = useState(people?.lastName || "");
+  const [email, setEmail] = useState(people?.email || "");
+  const [phone, setPhone] = useState(people?.phone || "");
 
   async function save(){
 
     const data = { firstName, lastName, email, phone };
 
-    if(person){
+    if(people){
 
-      await updatePerson(person.id, data);
+      await updatePeople(people.id, data);
 
     }else{
 
-      await createPerson(data);
+      await createPeople(data);
 
     }
 

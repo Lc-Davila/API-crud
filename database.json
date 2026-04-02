@@ -1,11 +1,4 @@
 {
-    "people":[
-        {
-            "id":1,
-            "firtName":"Lucas",
-            "lastName":"Martins",
-            "email":"lucas@gmail.com.br"
-
-        }
-    ]
+  "people": [],
+  "$schema": "./node_modules/json-server/schema.json"
 }
